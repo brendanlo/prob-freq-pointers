@@ -10,14 +10,15 @@ function canConstructWord(word, letters) {
     let lettersCount = {};
 
     for (let letter of letters) {
-        lettersCount[letter] = (lettersCount[letter]) ? lettersCount[letter]++ : 1;
+        console.log(`letter: ${letter} | lettersCount[letter]: ${lettersCount[letter]}`);
+        lettersCount[letter] = (lettersCount[letter]) ? lettersCount[letter] + 1 : 1;
     }
     console.log(`lettersCount: ${lettersCount}`)
 
     // iterate through a for loop that subtracts 1 from the letters object
     // O(m)
     for (let letter of word) {
-        console.log("lettersCount[letter]", lettersCount[letter]);
+        console.log("letter: ", letter, "lettersCount[letter]", lettersCount[letter]);
         // if there's no letter found, then return false
         // if value goes -1, then return false
         if (!lettersCount[letter] || lettersCount[letter] === 0) {
